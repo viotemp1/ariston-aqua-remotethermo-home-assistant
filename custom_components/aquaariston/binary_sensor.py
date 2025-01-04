@@ -3,9 +3,9 @@
 from homeassistant.components.binary_sensor import BinarySensorDeviceClass
 from homeassistant.components.binary_sensor import (
     # DEVICE_CLASS_CONNECTIVITY,
-    DEVICE_CLASS_POWER,
-    DEVICE_CLASS_HEAT,
-    DEVICE_CLASS_UPDATE,
+    # DEVICE_CLASS_POWER,
+    # DEVICE_CLASS_HEAT,
+    # DEVICE_CLASS_UPDATE,
     BinarySensorEntity,
 )
 from homeassistant.const import CONF_BINARY_SENSORS, CONF_NAME
@@ -43,9 +43,9 @@ _LOGGER = logging.getLogger(__name__)
 BINARY_SENSORS = {
     PARAM_ONLINE: (BINARY_SENSOR_ONLINE, BinarySensorDeviceClass.CONNECTIVITY, None), # DEVICE_CLASS_CONNECTIVITY
     PARAM_CHANGING_DATA: (BINARY_SENSOR_CHANGING_DATA, None, "mdi:cogs"),
-    PARAM_UPDATE: (BINARY_SENSOR_UPDATE, DEVICE_CLASS_UPDATE, None),
-    PARAM_ON: (BINARY_SENSOR_ON, DEVICE_CLASS_POWER, "mdi:power"),
-    PARAM_HEATING: (BINARY_SENSOR_HEATING, DEVICE_CLASS_HEAT, None),
+    PARAM_UPDATE: (BINARY_SENSOR_UPDATE, BinarySensorDeviceClass.UPDATE, None), # DEVICE_CLASS_UPDATE
+    PARAM_ON: (BINARY_SENSOR_ON, BinarySensorDeviceClass.POWER, "mdi:power"), # DEVICE_CLASS_POWER
+    PARAM_HEATING: (BINARY_SENSOR_HEATING, BinarySensorDeviceClass.HEAT, None), # DEVICE_CLASS_HEAT
     PARAM_CLEANSE: (BINARY_SENSOR_CLEANSE, None, "mdi:bacteria-outline"),
     PARAM_ECO: (BINARY_SENSOR_ECO, None, "mdi:leaf"),
 }
