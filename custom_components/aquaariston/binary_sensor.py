@@ -1,7 +1,8 @@
 """Suppoort for Ariston Aqua binary sensors."""
 
+from homeassistant.components.binary_sensor import BinarySensorDeviceClass
 from homeassistant.components.binary_sensor import (
-    DEVICE_CLASS_CONNECTIVITY,
+    # DEVICE_CLASS_CONNECTIVITY,
     DEVICE_CLASS_POWER,
     DEVICE_CLASS_HEAT,
     DEVICE_CLASS_UPDATE,
@@ -40,7 +41,7 @@ _LOGGER = logging.getLogger(__name__)
 
 # Binary sensor types are defined like: Name, device class, icon
 BINARY_SENSORS = {
-    PARAM_ONLINE: (BINARY_SENSOR_ONLINE, DEVICE_CLASS_CONNECTIVITY, None),
+    PARAM_ONLINE: (BINARY_SENSOR_ONLINE, BinarySensorDeviceClass.CONNECTIVITY, None), # DEVICE_CLASS_CONNECTIVITY
     PARAM_CHANGING_DATA: (BINARY_SENSOR_CHANGING_DATA, None, "mdi:cogs"),
     PARAM_UPDATE: (BINARY_SENSOR_UPDATE, DEVICE_CLASS_UPDATE, None),
     PARAM_ON: (BINARY_SENSOR_ON, DEVICE_CLASS_POWER, "mdi:power"),
